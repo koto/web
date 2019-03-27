@@ -14,6 +14,39 @@ import {TrackAuxappModel} from '../../tracks/track-auxapp.model';
 
 export class PlayqueueItemAuxappModel
   extends PlaylistItemAuxappModel {
+    @attributesKey('status')
+    @defaultValue(PlayQueueItemStatus.Scheduled)
+    status: PlayQueueItemStatus;
+
+    @attributesKey('track')
+    @dynamicInstance({
+      identifierKey: 'provider_id',
+      identifierKeyValueMap: {
+        soundcloud: TrackSoundcloudModel,
+        youtube: TrackYoutubeModel,
+        mixcloud: TrackMixcloudModel,
+        deezer: TrackDeezerModel,
+        default: TrackAuxappModel
+      }
+    })
+    track: ITrack;
+
+    @attributesKey('progress')
+    @defaultValue(0)
+    progress: number;
+
+    @attributesKey('duration')
+    @defaultValue(0)
+    duration: number;
+
+    @attributesKey('indexBeforeShuffle')
+    indexBeforeShuffle: number;
+
+    @attributesKey('socketUpdateTime')
+    socketUpdateTime: number;
+
+    seekToSeconds: number;
+
 
   private _promisePerState = {};
   private _blockUpdate: boolean;
@@ -43,42 +76,9 @@ export class PlayqueueItemAuxappModel
     return true;
   }
 
-  @attributesKey('status')
-  @defaultValue(PlayQueueItemStatus.Scheduled)
-  status: PlayQueueItemStatus;
-
-  @attributesKey('track')
-  @dynamicInstance({
-    identifierKey: 'provider_id',
-    identifierKeyValueMap: {
-      soundcloud: TrackSoundcloudModel,
-      youtube: TrackYoutubeModel,
-      mixcloud: TrackMixcloudModel,
-      deezer: TrackDeezerModel,
-      default: TrackAuxappModel
-    }
-  })
-  track: ITrack;
-
-  @attributesKey('progress')
-  @defaultValue(0)
-  progress: number;
-
-  @attributesKey('duration')
-  @defaultValue(0)
-  duration: number;
-
-  @attributesKey('indexBeforeShuffle')
-  indexBeforeShuffle: number;
-
-  @attributesKey('socketUpdateTime')
-  socketUpdateTime: number;
-
-  seekToSeconds: number;
-
   urlRoot = () => {
     return (<PlayqueueItemsAuxappCollection<PlayqueueItemAuxappModel>>this.collection).url();
-  };
+  }
 
   private resolveOnStatus(requestedStatus): Promise<any> {
     if (!this._promisePerState[requestedStatus]) {

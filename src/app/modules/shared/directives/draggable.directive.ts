@@ -10,11 +10,11 @@ export class DraggableDirective implements OnInit, OnDestroy {
   private _imageIsLoaded: boolean;
   private _subscriptions: Subscription;
 
-  @Input('dragData') dragData: any;
+  @Input() dragData: any;
 
-  @Input('dragImageUrl') dragImageUrl: string;
+  @Input() dragImageUrl: string;
 
-  @Input('dragEffect') dragEffect: string;
+  @Input() dragEffect: string;
 
   constructor(private el: ElementRef, private renderer2: Renderer2, private dragAndDropService: DragAndDropService) {
     this._subscriptions = new Subscription();

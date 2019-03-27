@@ -25,7 +25,7 @@ export class AlertBoxComponent implements OnInit {
   }
 
   public close() {
-    this.el.nativeElement.remove()
+    this.el.nativeElement.remove();
   }
 
   ngOnInit(): void {

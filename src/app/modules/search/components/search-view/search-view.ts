@@ -1,4 +1,5 @@
 import {AfterViewInit, Component, ViewChild} from '@angular/core';
+// tslint:disable-next-line: max-line-length
 import {CollectionTextInputSearchComponent} from '../../../shared/components/collection-text-input-search/collection-text-input-search.component';
 import * as localforage from 'localforage';
 import {TabBarComponent} from '../../../shared/components/tab-bar/tab-bar';
@@ -140,7 +141,7 @@ export class SearchViewComponent implements AfterViewInit {
     if (value) {
       return this.humanReadableSecondsPipe.transform((value / 1000).toString());
     }
-  };
+  }
 
   public connect(providerId: string) {
     const account: IAuthenticatedUserAccount = this.authenticatedUser.accounts.getAccountForProvider(providerId);

@@ -155,7 +155,7 @@ export class PlayerControlsComponent implements OnInit {
 
   public transformProgressBarValues = (input: string) => {
     return this.humanReadableSecPipe.transform(input, null);
-  };
+  }
 
   public playTrackFromPosition(from: number) {
     const currItem = this.playQueue.items.getCurrentItem();

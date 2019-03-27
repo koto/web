@@ -6,7 +6,7 @@ export interface IArtist extends BaseModel {
   image: AbstractImageModel;
   provider: string;
 
-  //account: IAccount;
+  // account: IAccount;
 
   getFullName(): string;
 

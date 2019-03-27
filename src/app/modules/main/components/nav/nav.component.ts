@@ -8,6 +8,7 @@ import {AuthenticatedUserAccountYoutubeModel} from '../../../api/authenticated-u
 import {debounce} from 'underscore';
 import {AuthenticatedUserPlaylistAuxappModel} from '../../../api/authenticated-user/playlist/authenticated-user-playlist-auxapp.model';
 import {AuthenticatedUserPlaylistYoutubeModel} from '../../../api/authenticated-user/playlist/authenticated-user-playlist-youtube.model';
+// tslint:disable-next-line: max-line-length
 import {AuthenticatedUserPlaylistSoundcloudModel} from '../../../api/authenticated-user/playlist/authenticated-user-playlist-soundcloud.model';
 import {DragAndDropService, DragAndDropStates, IDragAndDropData} from '../../../shared/services/drag-and-drop';
 import {ITrack} from '../../../api/tracks/track.interface';

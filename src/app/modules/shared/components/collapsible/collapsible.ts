@@ -144,7 +144,7 @@ export class CollapsibleComponent implements AfterContentInit, OnChanges, OnDest
     this._collapsibleBody.nativeElement.style.transition = `all ${this._transitionDuration / 1000}s ease`;
   }
 
-  ngOnDestroy(){
+  ngOnDestroy() {
     this._subscriptions.unsubscribe();
   }
 

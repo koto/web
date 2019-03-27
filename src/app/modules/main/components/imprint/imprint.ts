@@ -30,7 +30,7 @@ export class ImprintComponent {
         if (!findWhere(dependencies, {name: uppercasename})) {
           dependencies.push({
             name: uppercasename,
-            version: packageJSON.dependencies[key].replace('^','')
+            version: packageJSON.dependencies[key].replace('^', '')
           });
         }
       }

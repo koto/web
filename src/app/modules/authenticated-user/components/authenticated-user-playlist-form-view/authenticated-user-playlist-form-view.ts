@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {IPlaylist} from '../../../api/playlists/playlist.interface';
 import {AuthenticatedUserPlaylistAuxappModel} from '../../../api/authenticated-user/playlist/authenticated-user-playlist-auxapp.model';
+// tslint:disable-next-line: max-line-length
 import {AuthenticatedUserPlaylistSoundcloudModel} from '../../../api/authenticated-user/playlist/authenticated-user-playlist-soundcloud.model';
 import {AuthenticatedUserPlaylistYoutubeModel} from '../../../api/authenticated-user/playlist/authenticated-user-playlist-youtube.model';
 import {ActivatedRoute, Router} from '@angular/router';
