@@ -59,15 +59,16 @@
     "zone.js": "0.8.29"
   },
   "devDependencies": {
+    "@angular-devkit/build-angular": "0.11.0",
     "@angular/cli": "8.0.0-beta.8",
     "@angular/compiler-cli": "8.0.0-beta.9",
     "@angular/language-service": "8.0.0-beta.9",
-    "@angular-devkit/build-angular": "0.11.0",
     "@types/backbone": "1.3.44",
     "@types/jasmine": "2.8.8",
     "@types/jasminewd2": "2.0.3",
     "@types/jquery": "2.0.33",
     "@types/node": "6.0.92",
+    "@types/trusted-types": "^1.0.0",
     "@types/underscore": "1.7.33",
     "@types/youtube": "0.0.32",
     "codelyzer": "4.5.0",
