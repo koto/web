@@ -11,19 +11,19 @@ export class DropZoneDirective implements OnInit, OnDestroy {
   private _subscriptions: Subscription;
   private _hasEntered: boolean;
 
-  @Output('dropData')
-  public drop: EventEmitter<IDragAndDropData>;
+  @Output()
+  public dropData: EventEmitter<IDragAndDropData>;
 
-  @Output('dragOver')
+  @Output()
   public dragOver: EventEmitter<IDragAndDropData>;
 
-  @Output('dragEnter')
+  @Output()
   public dragEnter: EventEmitter<IDragAndDropData>;
 
-  @Output('dragLeave')
+  @Output()
   public dragLeave: EventEmitter<IDragAndDropData>;
 
-  @Input('dropItemRef')
+  @Input()
   public dropItemRef: any;
 
   constructor(private el: ElementRef,
@@ -33,7 +33,7 @@ export class DropZoneDirective implements OnInit, OnDestroy {
     this.dragOver = new EventEmitter();
     this.dragEnter = new EventEmitter();
     this.dragLeave = new EventEmitter();
-    this.drop = new EventEmitter();
+    this.dropData = new EventEmitter();
     this._subscriptions = new Subscription();
   }
 
@@ -70,7 +70,7 @@ export class DropZoneDirective implements OnInit, OnDestroy {
       event.preventDefault();
     }
     this.onDragLeave(event);
-    this.execCallback(this.drop, event);
+    this.execCallback(this.dropData, event);
   }
 
   public ngOnInit(): void {

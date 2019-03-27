@@ -19,7 +19,7 @@ export interface IPlayerUpdates {
   currentTimeChange: EventEmitter<{progress: number, item: PlayqueueItemAuxappModel}>;
 }
 
-export interface IPlayer extends IPlayerUpdates{
+export interface IPlayer extends IPlayerUpdates {
   playQueueItem: PlayqueueItemAuxappModel;
   supportsMultiplePlayerInstances: boolean;
   supportsCrossfade: boolean;

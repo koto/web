@@ -98,7 +98,7 @@ export class ModalHolderComponent implements OnInit, OnDestroy {
         filter(ev => ev === ModalServiceStates.ModalRemoved)
       )
       .subscribe(() => {
-        //debugger;
+        // debugger;
       });
   }
 

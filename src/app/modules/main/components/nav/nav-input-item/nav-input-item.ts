@@ -48,7 +48,7 @@ export class NavInputItemComponent implements ControlValueAccessor {
 
   public showInput() {
     this.inputIsVisible = true;
-    //this.input.nativeElement.focus();
+    // this.input.nativeElement.focus();
   }
 
   hideInput() {

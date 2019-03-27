@@ -12,7 +12,7 @@ export class ToastService {
 
   public clear() {
     this._toasts.reset();
-    //mwScheduler.reset();
+    // mwScheduler.reset();
   }
 
   public getToasts() {

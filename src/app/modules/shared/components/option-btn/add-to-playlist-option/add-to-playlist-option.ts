@@ -1,5 +1,6 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {ITrack} from '../../../../api/tracks/track.interface';
+// tslint:disable-next-line: max-line-length
 import {AuthenticatedUserPlaylistSelectorModalComponent} from '../../../../authenticated-user/components/authenticated-user-playlist-selector-modal/authenticated-user-playlist-selector-modal';
 import {ModalService} from '../../../services/modal';
 import {Modal} from '../../../src/modal-factory.class';

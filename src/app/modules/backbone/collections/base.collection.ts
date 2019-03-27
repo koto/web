@@ -72,7 +72,7 @@ export class BaseCollection<TModel extends BaseModel> extends SelectableCollecti
 
   url = () => {
     return getUrl(this);
-  };
+  }
 
   create(attributes: any, options: ModelSaveOptions = {}) {
     options.wait = true;

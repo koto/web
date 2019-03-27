@@ -23,7 +23,7 @@ export class BaseModel extends SelectableModel {
 
   urlRoot: Function = (): string => {
     return getUrl(this);
-  };
+  }
 
   defaults() {
     return {};

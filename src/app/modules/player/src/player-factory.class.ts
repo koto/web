@@ -93,7 +93,8 @@ export class PlayerFactory {
           playerStatus === PlayerStatus.Paused ||
           playerStatus === PlayerStatus.Ended) {
           console.warn(
-            'Playerfactory cleanup service destroys unused player for provider ' + player.component.instance.playQueueItem.track.provider_id);
+            'Playerfactory cleanup service destroys unused player for provider ' +
+            player.component.instance.playQueueItem.track.provider_id);
           player.component.destroy();
           this._playerStore.remove(player);
         }
