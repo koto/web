@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta http-equiv="Content-Security-Policy" content="trusted-types @angular/platform-browser default">
+    <script>
+      TrustedTypes.createPolicy('default', {
+        createURL(s) {
+          debugger;
+          console.log('default policy called with ', s);
+          return s;
+        },
+        createScript(s) {
+          debugger;
+          console.log('default policy called with ', s);
+          return s;
+        },
+        createScriptURL(s) {
+          debugger;
+          console.log('default policy called with ', s);
+          return s;
+        },
+        createHTML(s) {
+          debugger;
+          console.log('default policy called with ', s);
+          return s;
+        }
+      }, true);
+    </script>  
   <base href="/">
   <title>Cloud-Player</title>
   <meta charset="UTF-8">
