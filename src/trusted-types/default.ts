@@ -1,3 +1,5 @@
+/// <reference types="trusted-types" />
+
 const ALLOWED_HTML = [
       // Jquery does that.
       `<textarea>x</textarea>`,
@@ -16,7 +18,9 @@ const ALLOWED_SCRIPTS = [
       'https://s.ytimg.com/yts/jsbin/www-widgetapi-vfljrlvNi/www-widgetapi.js',
 ];
 
-export const DefaultPolicy = TrustedTypes.createPolicy('default', {
+export const TrustedTypesAvailable = typeof TrustedTypes !== 'undefined';
+
+export const DefaultPolicy = TrustedTypesAvailable ? TrustedTypes.createPolicy('default', {
   createHTML(i) {
     if (ALLOWED_HTML.includes(i)) {
       return i;
@@ -43,5 +47,4 @@ export const DefaultPolicy = TrustedTypes.createPolicy('default', {
   createScript(i) {
     throw new TypeError();
   }
-}, true);
-
+}, true) : null;
