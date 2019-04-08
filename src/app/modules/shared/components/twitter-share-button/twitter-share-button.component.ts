@@ -1,5 +1,4 @@
 import {Component, ElementRef, EventEmitter, OnInit, Output} from '@angular/core';
-import { CreateResourceUrlFromScriptLiteral } from '../../../../../trusted-types/const';
 
 @Component({
   selector: 'app-twitter-share-button',
@@ -36,7 +35,7 @@ export class TwitterShareButtonComponent implements OnInit {
         const scripts = document.getElementsByTagName('script')[0];
         js = document.createElement('script');
         js.id = twitterElId;
-        js.src = CreateResourceUrlFromScriptLiteral('//platform.twitter.com/widgets.js');
+        js.src = '//platform.twitter.com/widgets.js';
         scripts.parentNode.insertBefore(js, twitterScriptEl);
         js.onload = () => {
           resolve();
