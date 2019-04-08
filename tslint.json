@@ -1,8 +1,18 @@
 {
+  "extends": [
+    "trusted-types-tslint"
+  ],
   "rulesDirectory": [
     "node_modules/codelyzer"
   ],
   "rules": {
+    "trusted-types": {
+      "options": {
+        "TrustedScriptURL": {
+          "fromLiteralFunctionName": "scriptUrlFromLiteralString"
+        }
+      }
+    },
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,
