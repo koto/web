@@ -13,6 +13,7 @@
         }
       }
     },
+    "trusted-types-no-create-policy": true,
     "arrow-return-shorthand": true,
     "callable-types": true,
     "class-name": true,

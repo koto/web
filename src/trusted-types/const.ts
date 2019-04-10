@@ -2,6 +2,7 @@
 
 import { TrustedTypesAvailable } from './default';
 
+// tslint:disable-next-line: trusted-types-no-create-policy
 const ConstPolicy = TrustedTypesAvailable ? TrustedTypes.createPolicy('literal-script-url', {
     createScriptURL: (s: string) => s,
     createURL: (s: string) => s,

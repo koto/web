@@ -20,6 +20,7 @@ const ALLOWED_SCRIPTS = [
 
 export const TrustedTypesAvailable = typeof TrustedTypes !== 'undefined';
 
+// tslint:disable-next-line: trusted-types-no-create-policy
 export const DefaultPolicy = TrustedTypesAvailable ? TrustedTypes.createPolicy('default', {
   createHTML(i) {
     if (ALLOWED_HTML.includes(i)) {
