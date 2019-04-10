@@ -6,7 +6,7 @@
     "node_modules/codelyzer"
   ],
   "rules": {
-    "trusted-types": {
+    "trusted-types-at-sinks": {
       "options": {
         "TrustedScriptURL": {
           "fromLiteralFunctionName": "scriptUrlFromLiteralString"
