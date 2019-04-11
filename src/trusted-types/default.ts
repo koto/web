@@ -13,9 +13,9 @@ const ALLOWED_HTML_REGEXP: RegExp[] = [
   new RegExp(`^<a id='sizzle[0-9]+'></a><select id='sizzle[0-9]+-\\s*\\\\' msallowcapture=''><option selected=''></option></select>$`),
 ];
 
-const ALLOWED_SCRIPTS = [
+const ALLOWED_SCRIPTS_REGEXP = [
       // YT API loads that.
-      'https://s.ytimg.com/yts/jsbin/www-widgetapi-vfljrlvNi/www-widgetapi.js',
+      new RegExp(`^https://s\.ytimg\.com/yts/jsbin/www-widgetapi-[a-zA-Z0-9]+/www-widgetapi\.js$`),
 ];
 
 export const TrustedTypesAvailable = typeof TrustedTypes !== 'undefined';
@@ -39,7 +39,7 @@ export const DefaultPolicy = TrustedTypesAvailable ? TrustedTypes.createPolicy('
     throw new TypeError('Disallowed URL');
   },
   createScriptURL(i) {
-    if (ALLOWED_SCRIPTS.includes(i)) {
+    if (ALLOWED_SCRIPTS_REGEXP.find((regexp) => regexp.test(i))) {
       return i;
     }
     console.error('Called with script URL: ' + i);
