@@ -36,17 +36,17 @@ export class GoogleAnalyticsTrackingProvider extends TrackingProviderModel {
      * This is the code snippet provided by Google Analytics
      * https://developers.google.com/analytics/devguides/collection/analyticsjs/
      */
-    (function (i: any, s: any, o: any, g: any, r: any, a?: any, m?: any) {
+    (function (i, s, r) {
       i['GoogleAnalyticsObject'] = r;
       i[r] = i[r] || function () {
         (i[r].q = i[r].q || []).push(arguments);
       }, i[r].l = 1 * <any>new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
+      const a = s.createElement('script'),
+        m = s.getElementsByTagName('script')[0];
+      a.async = true;
+      a.src = 'https://www.google-analytics.com/analytics.js';
       m.parentNode.insertBefore(a, m);
-    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    })(window, document, 'ga');
 
     window.ga('create', GoogleAnalyticsTrackingId, 'auto');
   }
