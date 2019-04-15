@@ -4,7 +4,7 @@
   "description": "Music/video player to play music from YouTube, SoundCloud and Mixcloud",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 0.0.0.0",
+    "start": "ng serve",
     "build": "ng build",
     "release": "ng build --prod && npm run sw && cp CNAME ./dist",
     "lint": "ng lint",
