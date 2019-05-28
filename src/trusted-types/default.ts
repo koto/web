@@ -31,21 +31,21 @@ export const DefaultPolicy = TrustedTypesAvailable ? TrustedTypes.createPolicy('
     }
     throw new TypeError('Disallowed HTML');
   },
-  createURL(i) {
+  createScriptURL(i) { // script.src
+    if (ALLOWED_SCRIPTS_REGEXP.find((regexp) => regexp.test(i))) {
+      return i;
+    }
+    console.error('Please refactor, script URL: ' + i);
+    return i;
+  },
+  createURL(i) { // all other URLs
     const url = new URL(i, document.baseURI);
     if (['http:', 'https:'].includes(url.protocol)) {
       return i;
     }
     throw new TypeError('Disallowed URL');
   },
-  createScriptURL(i) {
-    if (ALLOWED_SCRIPTS_REGEXP.find((regexp) => regexp.test(i))) {
-      return i;
-    }
-    console.error('Called with script URL: ' + i);
-    return i;
-  },
-  createScript(i) {
+  createScript(i) { // eval & friends
     throw new TypeError();
   }
 }, true) : null;
