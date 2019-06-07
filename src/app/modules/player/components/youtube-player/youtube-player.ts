@@ -5,6 +5,7 @@ import {IPlayer, IPlayerOptions, IPlayerSize} from '../../src/player.interface';
 import {Events} from 'backbone';
 import {AbstractPlayer} from '../../src/abstract-player.class';
 import {TrackYoutubeModel} from '../../../api/tracks/track-youtube.model';
+import { scriptUrlFromLiteralString } from '../../../../../trusted-types/const';
 
 @Component({
   selector: 'app-youtube-player',
@@ -94,7 +95,7 @@ export class YoutubePlayerComponent extends AbstractPlayer implements IPlayer, O
         const scripts = document.getElementsByTagName('script')[0];
         js = <HTMLScriptElement>document.createElement('script');
         js.id = youtubeElId;
-        js.src = '//www.youtube.com/iframe_api';
+        js.src = scriptUrlFromLiteralString('//www.youtube.com/iframe_api');
         scripts.parentNode.insertBefore(js, youtubeScriptEl);
       }
     });
