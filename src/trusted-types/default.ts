@@ -15,7 +15,7 @@ const ALLOWED_HTML_REGEXP: RegExp[] = [
 
 const ALLOWED_SCRIPTS_REGEXP = [
       // YT API loads that.
-      new RegExp(`^https://s\.ytimg\.com/yts/jsbin/www-widgetapi-[a-zA-Z0-9]+/www-widgetapi\.js$`),
+      new RegExp(`^https://s\.ytimg\.com/yts/jsbin/www-widgetapi-[-a-zA-Z0-9]+/www-widgetapi\.js$`),
 ];
 
 export const TrustedTypesAvailable = typeof TrustedTypes !== 'undefined';
