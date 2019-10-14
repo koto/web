@@ -3,9 +3,9 @@
 import { TrustedTypesAvailable } from './default';
 
 // tslint:disable-next-line: trusted-types-no-create-policy
-const ConstPolicy = TrustedTypesAvailable ? TrustedTypes.createPolicy('literal-script-url', {
+const ConstPolicy = TrustedTypesAvailable ? window.trustedTypes.createPolicy('literal-script-url', {
     createScriptURL: (s: string) => s
-}, false) : null;
+}) : null;
 
 
 type LiteralString<S extends string> = string extends S ? 'Not a string literal' : S;
