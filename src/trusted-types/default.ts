@@ -2,11 +2,6 @@
 
 import {environment} from '../environments/environment';
 
-// TODO: Remove when Chrome renames the property.
-if (window.TrustedTypes) {
-  window.trustedTypes = window.TrustedTypes;
-}
-
 export const TrustedTypesAvailable = typeof window.trustedTypes !== 'undefined';
 
 // tslint:disable-next-line: trusted-types-no-create-policy
@@ -51,12 +46,6 @@ export const DefaultPolicy = TrustedTypesAvailable ? window.trustedTypes.createP
     }
     if (i.match('jit_')) {
       return i; // JIT compiler-generated code, only enabled in development.
-    }
-  },
-  createURL(i) { // DEPRECATED, to be removed in Chrome 79
-    const url = new URL(i, document.baseURI);
-    if (['http:', 'https:'].includes(url.protocol)) {
-      return i;
     }
   },
 }) : null;
